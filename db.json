@@ -1,0 +1,15 @@
+[
+  {
+    "nome": "Carbonara",
+    "ingredienti": ["uovo","guanciale","pecorino"]
+  },
+  {
+    "nome": "Pizza Margherita",
+    "ingredienti": ["mozzarella","basilico"]
+  },
+  {
+    "nome": "Panna Cotta",
+    "ingredienti": ["cacao","caffe"]
+  }
+
+]
