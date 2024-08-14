@@ -12,7 +12,7 @@
   <!--fontawesome-->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css' integrity='sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==' crossorigin='anonymous'/>
   <!--vue-->
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.37/vue.global.min.js' integrity='sha512-DqEEvSuoZMoX7siGBL6dqybFZeH0oCysZnIXBq9PHttRbdEWwc7tMk0nlkGhEsLJOMzk1fnNU6OYe/o3V3D61Q==' crossorigin='anonymous'></script>
   <title>TO DO</title>
 </head>
 <body>
@@ -23,17 +23,24 @@
         <div class="container">
           <div class="row">
             <div class="col-12">
+
               <h1 class="text-center fw-bold text-muted">TO DO LIST</h1>
+
               <ul class="list-group list-group-flush border border-1 rounded">
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <span class="w-100 h-100 task-item">HTML</span>
+
+                <li 
+                v-for="(todo, index) in todos"
+                :key="index"
+                class="list-group-item d-flex justify-content-between align-items-center">
+                  <span class="w-100 h-100 task-item " :class="{'text-decoration-line-through': todo.done}"
+                  >{{todo.text}}</span>
                   <span class="trash badge bg-danger p-2">
                     <i class="fa-solid fa-trash"></i>
                   </span>
 
                 </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <span class="w-100 h-100 task-item">CSS</span>
+                <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span class="w-100 h-100 task-item text-decoration-line-through">CSS</span>
                   <span class="trash badge bg-danger p-2">
                     <i class="fa-solid fa-trash"></i>
                   </span>
@@ -45,7 +52,7 @@
                     <i class="fa-solid fa-trash"></i>
                   </span>
 
-                </li>
+                </li>-->
 
               </ul>
             </div>
@@ -54,5 +61,7 @@
       </section>
     </div>
   </div>
+
+  <script src="main/script.js"></script>
 </body>
 </html>
