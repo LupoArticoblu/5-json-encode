@@ -59,6 +59,34 @@
           </div>
         </div>
       </section>
+
+      <section class="add-todo py-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="input-group mb-3">
+                <input
+                @keyup.enter="addTodo"
+                v-model.trim="newTodo"
+                type="text"
+                class="form-control"
+                placeholder="Inserisci una task"
+                aria-label="Inserisci una task"
+                aria-describedby="button-add"
+                >
+                <button
+                @click="addTodo"
+                type="button"
+                class="btn btn-outline-warning"
+                id="button-add"
+                >
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 
