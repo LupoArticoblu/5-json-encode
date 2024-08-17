@@ -41,4 +41,9 @@ if(isset($_POST['removeTodo'])) {
 header('Content-type: application/json');
 echo json_encode($list);
 
+//un'altra cosa MOLTO IMPORTANTE che fa riferimento a header sono i cors: cors = cross-origin-resource-sharing, quindi risorse da più origini che puntano allo stesso server, questo non è possibile perchè si otterrebbe un problema di CORS ed un errore bloccante(403), il problema però può essere ovviato inserendo 2 header: il primo che fa riferimento al nostro localhost con questa sintassi "Access-Control-Allow-Origin: *" e il secondo che fa riferimento alle nostre risorse con questa sintassi "Access-Control-Allow-Headers: *"
+
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: *');
+
 ?>
