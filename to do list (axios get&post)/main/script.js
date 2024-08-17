@@ -6,7 +6,8 @@ createApp({
       apiUrl: 'server.php',
       todos: [],
       newTodo: '',
-      newTodoDone: false
+      newTodoDone: false,
+      messageErr: '',
     }
   },
   methods:{
@@ -34,6 +35,7 @@ createApp({
         })  
     },
     getTodos(){
+      this.messageErr = '';
       axios
         .get(this.apiUrl)
         .then(response => {
@@ -43,6 +45,35 @@ createApp({
         .catch(error => {
           console.log(error);
         })
+    },
+    toggleDone(index){
+      this.messageErr = '';
+      const data = new FormData();
+      data.append('toggleDone', index);
+
+      axios
+        .post(this.apiUrl, data)
+        .then(response => {
+          console.log(response);
+          this.todos = response.data;
+        })
+        
+    },
+    removeTodo(index){
+      this.messageErr = '';
+      if(!this.todos[index].done){
+        this.messageErr = 'Non puoi rimuovere un elemento non completato';
+      }else{  
+      if(!confirm('Sei sicuro di voler rimuovere questo elemento?')) return;
+      const data = new FormData();
+      data.append('removeTodo', index);
+      axios
+        .post(this.apiUrl, data)
+        .then(response => {
+          console.log(response);
+          this.todos = response.data;
+        })
+      } 
     }
   },
   mounted() {

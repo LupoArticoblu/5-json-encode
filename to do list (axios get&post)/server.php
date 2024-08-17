@@ -20,6 +20,24 @@ if(isset($_POST['todoText'])) {
   
 }
 
+if(isset($_POST['toggleDone'])) {
+
+  $list[$_POST['toggleDone']]['done'] = !$list[$_POST['toggleDone']]['done'];
+
+  //salvo il nuovo array encode in db.json
+  file_put_contents('main/db.json', json_encode($list));
+  
+}
+
+if(isset($_POST['removeTodo'])) {
+
+  unset($list[$_POST['removeTodo']]);
+
+  //salvo il nuovo array encode in db.json
+  file_put_contents('main/db.json', json_encode($list));
+  
+}
+
 header('Content-type: application/json');
 echo json_encode($list);
 

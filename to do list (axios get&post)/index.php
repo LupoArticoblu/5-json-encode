@@ -26,15 +26,17 @@
 
               <h1 class="text-center fw-bold text-muted">TO DO LIST</h1>
 
+              <div class="alert alert-danger" role="alert" v-if="messageErr.length > 0">{{messageErr}}</div>
               <ul class="list-group list-group-flush border border-1 rounded">
 
                 <li 
                 v-for="(todo, index) in todos"
+                @click="toggleDone(index)"
                 :key="index"
                 class="list-group-item d-flex justify-content-between align-items-center">
                   <span class="w-100 h-100 task-item " :class="{'text-decoration-line-through': todo.done}"
                   >{{todo.text}}</span>
-                  <span class="trash badge bg-danger p-2">
+                  <span @click.stop="removeTodo(index)" class="trash badge bg-danger p-2">
                     <i class="fa-solid fa-trash"></i>
                   </span>
 
