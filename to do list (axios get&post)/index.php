@@ -13,6 +13,8 @@
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css' integrity='sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==' crossorigin='anonymous'/>
   <!--vue-->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.37/vue.global.min.js' integrity='sha512-DqEEvSuoZMoX7siGBL6dqybFZeH0oCysZnIXBq9PHttRbdEWwc7tMk0nlkGhEsLJOMzk1fnNU6OYe/o3V3D61Q==' crossorigin='anonymous'></script>
+  <!-- sweetalert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
   <title>TO DO</title>
 </head>
 <body>
